@@ -5,12 +5,21 @@ public class Member {
     private String Name;
     private String Firstname;
     private String Email;
+    private String Password;
 
     public Member(int id, String pseudo, String email) {
     }
 
     public int getId() {
         return id;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String password) {
+        Password = password;
     }
 
     public void setId(int id) {
@@ -35,6 +44,14 @@ public class Member {
 
     public String getEmail() {
         return Email;
+    }
+
+    public Member(int id, String name, String firstname, String email, String password) {
+        this.id = id;
+        Name = name;
+        Firstname = firstname;
+        Email = email;
+        Password = password;
     }
 
     public void setEmail(String email) {

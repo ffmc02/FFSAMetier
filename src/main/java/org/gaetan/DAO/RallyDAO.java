@@ -1,4 +1,4 @@
 package org.gaetan.DAO;
 
-public class functionsDAO {
+public class RallyDAO {
 }
