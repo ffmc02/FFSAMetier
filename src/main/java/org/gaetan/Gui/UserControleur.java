@@ -43,17 +43,21 @@ TableColumn<Competition, String > NameOfCompetion;
      //   Close.setCellValueFactory(new PropertyValueFactory<>("Close"));
      //   tableLoad();
        // testTableau();
+//        message pour annoncé que tout c'est bien passer donc la connexion a la base de donné
+
         Alert alStart = new Alert(Alert.AlertType.INFORMATION);
         alStart.setTitle("DOnnée a jours ");
         alStart.setContentText("Bienvenue sur votre service de gestions  des compétitions,  votre tableau est à jours.");
         alStart.showAndWait();
     }
+    //fonction de teste
 public void testTableau (){
     System.out.println("Test " );
 
 }
-
+//Afficage du tableau
    public void tableLoad() {
+
         OpenCompetition.getItems().clear();
         OpenCompetition.refresh();
         CompetitionDAO ListCompetitionOutsideRally= new CompetitionDAO();
@@ -64,12 +68,13 @@ public void testTableau (){
 
 
    }
-
+//Au clique du bouton ouvrire une compétition l'onglét est déverouiiler et l'onglet Liste des compétition se verouille
    public  void OpenCompetition(){
        OpenCompetTab.setDisable(false);
        ListTabCiompet.setDisable(true);
 
    }
+//   au clique du bouton liste compétition l'onglet liste compétiton est dévérouiller et l'onglet ouvrire une compétion est vérouiller
    public void ListOpenedCompetiton(){
        OpenCompetTab.setDisable(true);
        ListTabCiompet.setDisable(false);
@@ -77,6 +82,7 @@ public void testTableau (){
        CompettionType.setCellValueFactory(new PropertyValueFactory<>("CategoryCompetition"));
        Localisation.setCellValueFactory(new PropertyValueFactory<>("Location_Circuit"));
        StartDay.setCellValueFactory(new PropertyValueFactory<>("DateDebut"));
+       //appel a la fonction TableauLoad().
        tableLoad();
    }
 

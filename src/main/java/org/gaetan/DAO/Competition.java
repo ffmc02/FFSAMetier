@@ -26,6 +26,7 @@ public class Competition {
     private  Date DateDebut ;
     private String CategoryCompetition;
     private  String Location_Circuit;
+//constructeur de la classe compétition
 
     public Competition(int id, int id_0108asap_categorycompetition, int id_0108asap_sportsevents, int id_0108asap_typeofcompetition, String open, String close, String typeOfCompetiton, int idRaceType, int numberDays, int idSportEvents, String observation, String nameOfTheTest, int idraceoutsiderally, Date start, Date end, Date day1, Date day2, Date day3, int idCompetition, Date dateDebut, String categoryCompetition) {
         this.id = id;
@@ -61,7 +62,7 @@ public class Competition {
         Location_Circuit = location_circuit;
         DateDebut= dateDebut;
     }
-
+//Essai de methode
     @Override
     public String toString() {
         return "Competition{" +
@@ -90,13 +91,11 @@ public class Competition {
                 '}';
     }
 
-    public Competition(String nameOfTheTest, String typeOfCompetiton, String location_circuit) {
-    }
 
     public Competition(String nameOfTheTest, String typeOfCompetiton, String location_circuit, Date start) {
 
     }
-
+//get et set de la fonction ListCompetitionOustidRally
     public String getLocation_Circuit() {
         return Location_Circuit;
     }
