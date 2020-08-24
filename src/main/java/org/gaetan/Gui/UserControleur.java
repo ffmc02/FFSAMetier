@@ -28,30 +28,56 @@ TableColumn<Competition, String > NameOfCompetion;
     TableColumn<Competition, String> Modify;
     @FXML
     TableColumn<Competition, String> Close;
-
+    @FXML
+    Button CompetitionOpen, RefistrerOfficiel, CompetitionList, OpenOustrideRally, OpenRally;
+    @FXML
+    Tab Index, OpenCompetTab, ListTabCiompet;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        NameOfCompetion.setCellValueFactory(new PropertyValueFactory<>("Nom de la compétition"));
-        CompettionType.setCellValueFactory(new PropertyValueFactory<>("Type de course"));
-        Localisation.setCellValueFactory(new PropertyValueFactory<>("Localisation"));
-        StartDay.setCellValueFactory(new PropertyValueFactory<>("Date de début"));
-        Modify.setCellValueFactory(new PropertyValueFactory<>("Modifier"));
-        Close.setCellValueFactory(new PropertyValueFactory<>("Fermée"));
-        tableLoad();
+//        NameOfCompetion.setCellValueFactory(new PropertyValueFactory<>("NameOfTheTest"));
+//        CompettionType.setCellValueFactory(new PropertyValueFactory<>("CategoryCompetition"));
+//        Localisation.setCellValueFactory(new PropertyValueFactory<>("Location_Circuit"));
+//        StartDay.setCellValueFactory(new PropertyValueFactory<>("DateDebut"));
+       // Modify.setCellValueFactory(new PropertyValueFactory<>("Modify"));
+     //   Close.setCellValueFactory(new PropertyValueFactory<>("Close"));
+     //   tableLoad();
+       // testTableau();
         Alert alStart = new Alert(Alert.AlertType.INFORMATION);
         alStart.setTitle("DOnnée a jours ");
-        alStart.setContentText("Bienvenue sur votre service des compétitions,  votre tableau est à jours.");
+        alStart.setContentText("Bienvenue sur votre service de gestions  des compétitions,  votre tableau est à jours.");
         alStart.showAndWait();
     }
+public void testTableau (){
+    System.out.println("Test " );
 
-    public void tableLoad() {
+}
+
+   public void tableLoad() {
         OpenCompetition.getItems().clear();
         OpenCompetition.refresh();
-        CompetitionDAO ListCompetitionOustidRally= new CompetitionDAO();
-        for (Competition Comp : ListCompetitionOustidRally.ListCompetitionOustidRally()){
-            OpenCompetition.getItems().add(new Competition(Comp.getNameOfTheTest()) );
+        CompetitionDAO ListCompetitionOutsideRally= new CompetitionDAO();
+        for (Competition Comp : ListCompetitionOutsideRally.ListCompetitionOustidRally()){
+            OpenCompetition.getItems().add(new Competition(Comp.getNameOfTheTest(), Comp.getCategoryCompetition(), Comp.getLocation_Circuit(), Comp.getDateDebut() ));
+
         }
 
-    }
+
+   }
+
+   public  void OpenCompetition(){
+       OpenCompetTab.setDisable(false);
+       ListTabCiompet.setDisable(true);
+
+   }
+   public void ListOpenedCompetiton(){
+       OpenCompetTab.setDisable(true);
+       ListTabCiompet.setDisable(false);
+       NameOfCompetion.setCellValueFactory(new PropertyValueFactory<>("NameOfTheTest"));
+       CompettionType.setCellValueFactory(new PropertyValueFactory<>("CategoryCompetition"));
+       Localisation.setCellValueFactory(new PropertyValueFactory<>("Location_Circuit"));
+       StartDay.setCellValueFactory(new PropertyValueFactory<>("DateDebut"));
+       tableLoad();
+   }
+
 }

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f30ad042-64d0-4524-bd8f-6929634b4fcc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/gaetan/DAO/Competition.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/gaetan/DAO/Competition.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/gaetan/DAO/CompetitionDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/gaetan/DAO/CompetitionDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/gaetan/DAO/connexion.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/gaetan/DAO/connexion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/gaetan/Gui/UserControleur.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/gaetan/Gui/UserControleur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/org/gaetan/Gui/user.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/org/gaetan/Gui/user.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gaetan/DAO/Competition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gaetan/DAO/Competition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gaetan/DAO/CompetitionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gaetan/DAO/CompetitionDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gaetan/DAO/connexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gaetan/DAO/connexion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gaetan/Gui/UserControleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gaetan/Gui/UserControleur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gaetan/Gui/user.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gaetan/Gui/user.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="fileRougePers" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="fileRougePers" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="fileRougePers" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:\IntelliJ IDEA Community Edition 2020.1.1\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1gOb9bhykbxslyFWQsuZvQyC6ZS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="FFSAMetier [run]" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f30ad042-64d0-4524-bd8f-6929634b4fcc" name="Default Changelist" comment="" />
+      <created>1597988456379</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1597988456379</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2475" y="9" key="#Inspections" timestamp="1597988697277">
+      <screen x="1920" y="-209" width="1920" height="1040" />
+    </state>
+    <state x="2475" y="9" key="#Inspections/1920.-209.1920.1040/0.0.1920.1040@1920.-209.1920.1040" timestamp="1597988697277" />
+    <state x="676" y="234" key="#com.intellij.ide.util.MemberChooser" timestamp="1597996527066">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="676" y="234" key="#com.intellij.ide.util.MemberChooser/1920.-209.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1597996527066" />
+    <state x="717" y="288" key="FileChooserDialogImpl" timestamp="1598254666865">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="717" y="288" key="FileChooserDialogImpl/1920.-209.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598254666865" />
+    <state width="1814" height="279" key="GridCell.Tab.0.bottom" timestamp="1598256029368">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1814" height="279" key="GridCell.Tab.0.bottom/1920.-209.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598256029368" />
+    <state width="1815" height="364" key="GridCell.Tab.0.bottom/1920.-209.1920.1040/0.0.1920.1040@1920.-209.1920.1040" timestamp="1597993998175" />
+    <state width="1814" height="279" key="GridCell.Tab.0.center" timestamp="1598256029368">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1814" height="279" key="GridCell.Tab.0.center/1920.-209.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598256029368" />
+    <state width="1815" height="364" key="GridCell.Tab.0.center/1920.-209.1920.1040/0.0.1920.1040@1920.-209.1920.1040" timestamp="1597993998175" />
+    <state width="1814" height="279" key="GridCell.Tab.0.left" timestamp="1598256029368">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1814" height="279" key="GridCell.Tab.0.left/1920.-209.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598256029368" />
+    <state width="1815" height="364" key="GridCell.Tab.0.left/1920.-209.1920.1040/0.0.1920.1040@1920.-209.1920.1040" timestamp="1597993998175" />
+    <state width="1814" height="279" key="GridCell.Tab.0.right" timestamp="1598256029368">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1814" height="279" key="GridCell.Tab.0.right/1920.-209.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598256029368" />
+    <state width="1815" height="364" key="GridCell.Tab.0.right/1920.-209.1920.1040/0.0.1920.1040@1920.-209.1920.1040" timestamp="1597993998175" />
+    <state width="1814" height="364" key="GridCell.Tab.1.bottom" timestamp="1598009452184">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1814" height="364" key="GridCell.Tab.1.bottom/1920.-209.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598009452184" />
+    <state width="1815" height="364" key="GridCell.Tab.1.bottom/1920.-209.1920.1040/0.0.1920.1040@1920.-209.1920.1040" timestamp="1597993998176" />
+    <state width="1814" height="364" key="GridCell.Tab.1.center" timestamp="1598009452184">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1814" height="364" key="GridCell.Tab.1.center/1920.-209.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598009452184" />
+    <state width="1815" height="364" key="GridCell.Tab.1.center/1920.-209.1920.1040/0.0.1920.1040@1920.-209.1920.1040" timestamp="1597993998176" />
+    <state width="1814" height="364" key="GridCell.Tab.1.left" timestamp="1598009452184">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1814" height="364" key="GridCell.Tab.1.left/1920.-209.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598009452184" />
+    <state width="1815" height="364" key="GridCell.Tab.1.left/1920.-209.1920.1040/0.0.1920.1040@1920.-209.1920.1040" timestamp="1597993998176" />
+    <state width="1814" height="364" key="GridCell.Tab.1.right" timestamp="1598009452184">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1814" height="364" key="GridCell.Tab.1.right/1920.-209.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598009452184" />
+    <state width="1815" height="364" key="GridCell.Tab.1.right/1920.-209.1920.1040/0.0.1920.1040@1920.-209.1920.1040" timestamp="1597993998176" />
+    <state x="417" y="107" key="SettingsEditor" timestamp="1598254549763">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="417" y="107" key="SettingsEditor/1920.-209.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598254549763" />
+    <state x="528" y="143" key="new project wizard" timestamp="1598254740001">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="528" y="143" key="new project wizard/1920.-209.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598254740001" />
+    <state x="570" y="249" key="run.anything.popup" timestamp="1598000363094">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="570" y="249" key="run.anything.popup/1920.-209.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598000363094" />
+  </component>
+</project>

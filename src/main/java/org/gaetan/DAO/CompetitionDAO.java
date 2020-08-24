@@ -10,13 +10,14 @@ public class CompetitionDAO extends connexion {
     public CompetitionDAO(){
 
     }
-    //methode de lecture des competitions ouverte (rallye)
+    //methode de lecture des competitions ouverte ( hors rallye)
     public List<Competition> ListCompetitionOustidRally(){
         List<Competition> ListCompetitionOustidRally= new ArrayList();
         this.createConnection();
         try{
             Statement stm = con.createStatement();
-            ResultSet res = stm.executeQuery("SELECT `0108asap_competiton`.`id`, `0108asap_competiton`.`id_0108asap_sportsevents`," +
+            ResultSet res = stm.executeQuery("" +
+                    "SELECT `0108asap_competiton`.`id`, `0108asap_competiton`.`id_0108asap_sportsevents`," +
                     "`0108asap_typeofcompetition`.`TypeOfCompetiton`, `0108asap_categorycompetition`.`id` AS `IdRaceType`," +
                     " `0108asap_typeofcompetition`.`id` AS `idTypeCompetition`, `0108asap_competiton`.`Open`, " +
                     "`0108asap_sportsevents`.`NumberDays`," +
@@ -47,31 +48,38 @@ public class CompetitionDAO extends connexion {
                     "INNER JOIN `0108asap_typeofcompetition` " +
                     "ON `0108asap_typeofcompetition`.`id`= `0108asap_competiton`.`id_0108asap_typeofcompetition` " +
                     " INNER JOIN `0108asap_raceoutsiderally` " +
-                    "ON `0108asap_raceoutsiderally`.`IdCompetition`=`0108asap_competiton`.`id`");
+                    "ON `0108asap_raceoutsiderally`.`IdCompetition`=`0108asap_competiton`.`id`" +
+                   // "WHERE `0108asap_competiton`.`Open`=1" +
+                    "");
             while (res.next()){
-                int id=res.getInt("id");
-                int id_0108asap_sportsevents= res.getInt("id_0108asap_sportsevents");
-                String TypeOfCompetiton= res.getString("TypeOfCompetiton");
-                int IdRaceType=res.getInt("IdRaceType");
-                int idTypeCompetition=res.getInt("idTypeCompetition");
-                String Open=res.getString("Open");
-                int NumberDays=res.getInt("NumberDays");
-                int IdSportEvents=res.getInt("IdSportEvents");
-                String Observation= res.getString("Observation");
-                String Close=res.getString("Close");
-                String NameOfTheTest=res.getString("NameOfTheTest");
-                int Idraceoutsiderally =res.getInt("Idraceoutsiderally");
-                Date Start =res.getDate("Start");
-                Date End=res.getDate("End");
-                Date Day1= res.getDate("Day1");
-                Date Day2 =res.getDate("Day2");
-                Date Day3= res.getDate("Day3");
-                int IdCompetition=res.getInt("IdCompetition");
-                Date DateDebut = res.getDate("DateDebut");
-                String CategoryCompetition =res.getString("CategoryCompetition");
-                Competition c =new Competition (id, id_0108asap_sportsevents, TypeOfCompetiton, IdRaceType, idTypeCompetition, Open, NumberDays, IdSportEvents, Observation, Close,  NameOfTheTest, Idraceoutsiderally, Start, End, Day1, Day2, Day3, IdCompetition, DateDebut, CategoryCompetition);
+              //  int id=res.getInt("id");
+              //  System.out.println( id);
+            //    int id_0108asap_sportsevents= res.getInt("id_0108asap_sportsevents");
+           //     String TypeOfCompetiton= res.getString("TypeOfCompetiton");
+           //     int IdRaceType=res.getInt("IdRaceType");
+          //      int idTypeCompetition=res.getInt("idTypeCompetition");
+          //      String Open=res.getString("Open");
+         //       int NumberDays=res.getInt("NumberDays");
+         //       int IdSportEvents=res.getInt("IdSportEvents");
+         ///       String Observation= res.getString("Observation");
+          //      String Close=res.getString("Close");
+           //     String NameOfTheTest=res.getString("NameOfTheTest");
+           //     int Idraceoutsiderally =res.getInt("Idraceoutsiderally");
+          //      Date Start =res.getDate("Start");
+           //     Date End=res.getDate("End");
+            //    Date Day1= res.getDate("Day1");
+            //    Date Day2 =res.getDate("Day2");
+            //    Date Day3= res.getDate("Day3");
+           //     int IdCompetition=res.getInt("IdCompetition");
+          //      Date DateDebut = res.getDate("DateDebut");
+           //     String CategoryCompetition =res.getString("CategoryCompetition");
+                Competition c =new Competition (res.getString("NameOfTheTest"), res.getString("CategoryCompetition"), res.getString("Location_Circuit"), res.getDate("DateDebut"));
+                        ;
+                        //(id, id_0108asap_sportsevents, TypeOfCompetiton, IdRaceType, idTypeCompetition, Open, NumberDays, IdSportEvents, Observation, Close,  NameOfTheTest, Idraceoutsiderally, Start, End, Day1, Day2, Day3, IdCompetition, DateDebut, CategoryCompetition);
                 ListCompetitionOustidRally.add(c);
 
+                System.out.println( c.toString());
+                System.out.println("ça marche List ListCompetitionOustidRally ok ");
             }
 
         } catch (SQLException throwables) {
@@ -82,3 +90,4 @@ public class CompetitionDAO extends connexion {
     }
 
 }
+

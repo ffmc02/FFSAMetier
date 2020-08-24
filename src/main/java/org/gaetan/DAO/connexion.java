@@ -13,7 +13,7 @@ public class connexion {
     public void createConnection(){
         try {
             con = getConnection(url,"root","");
-            System.out.println("ça marche ");
+            System.out.println("ça marche DB ");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

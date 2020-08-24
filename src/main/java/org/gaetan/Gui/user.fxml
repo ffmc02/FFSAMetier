@@ -7,37 +7,45 @@
    <children>
       <TabPane prefHeight="393.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
-          <Tab text="Competion ouverte">
+          <Tab fx:id="Index" text="Acccueil">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="CompetitionList" layoutX="113.0" layoutY="24.0" mnemonicParsing="false" onAction="#ListOpenedCompetiton" text="Liste des competition" />
+                        <Button fx:id="CompetitionOpen" layoutX="113.0" layoutY="95.0" mnemonicParsing="false" onAction="#OpenCompetition" text="Ouvrire une competition" />
+                        <Button fx:id="RefistrerOfficiel" layoutX="117.0" layoutY="170.0" mnemonicParsing="false" text="Liste des officiiel inscrit" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="OpenCompetTab" disable="true" text="Ouvreture de competition">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="OpenOustrideRally" layoutX="112.0" layoutY="56.0" mnemonicParsing="false" text="Ouvrire une competition hors rallye " />
+                        <Button fx:id="OpenRally" layoutX="112.0" layoutY="182.0" mnemonicParsing="false" text="Ouvriire un Rally /rallye tt" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+          <Tab fx:id="ListTabCiompet" disable="true" text="Competion ouverte">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <TableView fx:id="OpenCompetition" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
-                            <TableColumn fx:id="NameOfCompetion" prefWidth="117.0" text="Nom de l'épreuve" />
-                            <TableColumn fx:id="CompettionType" prefWidth="116.0" text="Type d'éppreuve" />
+                            <TableColumn fx:id="NameOfCompetion" prefWidth="117.0" text="épreuve" />
+                            <TableColumn fx:id="CompettionType" prefWidth="116.0" text="Categorie" />
                               <TableColumn fx:id="Localisation" prefWidth="73.0" text="Localisation" />
-                              <TableColumn fx:id="StartDay" prefWidth="139.0" text="Date de début" />
-                              <TableColumn fx:id="Modify" minWidth="3.0" prefWidth="69.0" text="Moddifier" />
-                              <TableColumn fx:id="Close" prefWidth="78.0" text="Fermé" />
+                              <TableColumn fx:id="StartDay" prefWidth="139.0" text="début" />
+<!--                             <TableColumn fx:id="Modify" minWidth="3.0" onEditStart="#tableLoad" prefWidth="69.0" text="Moddifier" />-->
+<!--                              <TableColumn fx:id="Close" onEditStart="#tableLoad" prefWidth="78.0" text="Fermé" >-->
+<!--                             </TableColumn>-->
                           </columns>
                         </TableView>
-                     </children></AnchorPane>
-            </content>
-          </Tab>
-          <Tab text="Concurents">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-
                      </children>
-                  </AnchorPane>
+              </AnchorPane>
             </content>
           </Tab>
-            <Tab text="Untitled Tab">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-              </content>
-            </Tab>
         </tabs>
       </TabPane>
    </children>

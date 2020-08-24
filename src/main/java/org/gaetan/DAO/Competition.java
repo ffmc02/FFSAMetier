@@ -17,7 +17,7 @@ public class Competition {
     private   String Observation;
     private  String NameOfTheTest;
     private int Idraceoutsiderally ;
-    private  Date Start ;
+    private Date Start ;
     private  Date End;
     private  Date Day1;
     private Date Day2;
@@ -25,6 +25,7 @@ public class Competition {
     private int IdCompetition;
     private  Date DateDebut ;
     private String CategoryCompetition;
+    private  String Location_Circuit;
 
     public Competition(int id, int id_0108asap_categorycompetition, int id_0108asap_sportsevents, int id_0108asap_typeofcompetition, String open, String close, String typeOfCompetiton, int idRaceType, int numberDays, int idSportEvents, String observation, String nameOfTheTest, int idraceoutsiderally, Date start, Date end, Date day1, Date day2, Date day3, int idCompetition, Date dateDebut, String categoryCompetition) {
         this.id = id;
@@ -40,7 +41,6 @@ public class Competition {
         Observation = observation;
         NameOfTheTest = nameOfTheTest;
         Idraceoutsiderally = idraceoutsiderally;
-        Start = start;
         End = end;
         Day1 = day1;
         Day2 = day2;
@@ -48,12 +48,70 @@ public class Competition {
         IdCompetition = idCompetition;
         DateDebut = dateDebut;
         CategoryCompetition = categoryCompetition;
+
+    }
+
+   // public Competition(int id, int id_0108asap_sportsevents, String typeOfCompetiton, int idRaceType, Integer idTypeCompetition, String open, int numberDays, int idSportEvents, String observation, String observation1, String close, String nameOfTheTest, int idraceoutsiderally, java.sql.Date start, java.sql.Date end, java.sql.Date day1, java.sql.Date day2, java.sql.Date day3, int idCompetition, java.sql.Date dateDebut, String categoryCompetition) {
+   // }
+
+
+    public Competition(String nameOfTheTest, String categoryCompetition, String location_circuit, java.sql.Date dateDebut) {
+        NameOfTheTest = nameOfTheTest;
+        CategoryCompetition = categoryCompetition;
+        Location_Circuit = location_circuit;
+        DateDebut= dateDebut;
+    }
+
+    @Override
+    public String toString() {
+        return "Competition{" +
+                "id=" + id +
+                ", id_0108asap_categorycompetition=" + id_0108asap_categorycompetition +
+                ", id_0108asap_sportsevents=" + id_0108asap_sportsevents +
+                ", id_0108asap_typeofcompetition=" + id_0108asap_typeofcompetition +
+                ", Open='" + Open + '\'' +
+                ", Close='" + Close + '\'' +
+                ", TypeOfCompetiton='" + TypeOfCompetiton + '\'' +
+                ", IdRaceType=" + IdRaceType +
+                ", NumberDays=" + NumberDays +
+                ", IdSportEvents=" + IdSportEvents +
+                ", Observation='" + Observation + '\'' +
+                ", NameOfTheTest='" + NameOfTheTest + '\'' +
+                ", Idraceoutsiderally=" + Idraceoutsiderally +
+                ", Start=" + Start +
+                ", End=" + End +
+                ", Day1=" + Day1 +
+                ", Day2=" + Day2 +
+                ", Day3=" + Day3 +
+                ", IdCompetition=" + IdCompetition +
+                ", DateDebut=" + DateDebut +
+                ", CategoryCompetition='" + CategoryCompetition + '\'' +
+                ", Location_Circuit='" + Location_Circuit + '\'' +
+                '}';
+    }
+
+    public Competition(String nameOfTheTest, String typeOfCompetiton, String location_circuit) {
+    }
+
+    public Competition(String nameOfTheTest, String typeOfCompetiton, String location_circuit, Date start) {
+
+    }
+
+    public String getLocation_Circuit() {
+        return Location_Circuit;
+    }
+
+    public void setLocation_Circuit(String location_Circuit) {
+        Location_Circuit = location_Circuit;
     }
 
     public Competition(int id, int id_0108asap_sportsevents, String typeOfCompetiton, int idRaceType, int idTypeCompetition, String open, int numberDays, int idSportEvents, String observation, String close, String nameOfTheTest, int idraceoutsiderally, Date start, Date end, Date day1, Date day2, Date day3, int idCompetition, Date dateDebut, String categoryCompetition) {
     }
 
     public Competition(String nameOfTheTest) {
+    }
+
+    public Competition(String nameOfTheTest, String typeOfCompetiton) {
     }
 
 
