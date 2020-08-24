@@ -64,10 +64,10 @@ public void testTableau (){
 //        for (Competition Comp : ListCompetitionOutsideRally.ListCompetitionOustidRally()){
 //            OpenCompetition.getItems().add(new Competition(Comp.getNameOfTheTest(), Comp.getCategoryCompetition(), Comp.getLocation_Circuit(), Comp.getDateDebut() ));
 
-//        }
+//
            OpenCompetition.getItems().addAll(ListCompetitionOutsideRally.ListCompetitionOustidRally());
            OpenCompetition.refresh();
-
+//        }
    }
 //Au clique du bouton ouvrire une compétition l'onglét est déverouiiler et l'onglet Liste des compétition se verouille
    public  void OpenCompetition(){

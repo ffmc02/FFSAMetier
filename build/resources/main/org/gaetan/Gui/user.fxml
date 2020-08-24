@@ -37,9 +37,9 @@
                             <TableColumn fx:id="CompettionType" prefWidth="116.0" text="Categorie" />
                               <TableColumn fx:id="Localisation" prefWidth="73.0" text="Localisation" />
                               <TableColumn fx:id="StartDay" prefWidth="139.0" text="début" />
-<!--                             <TableColumn fx:id="Modify" minWidth="3.0" onEditStart="#tableLoad" prefWidth="69.0" text="Moddifier" />-->
-<!--                              <TableColumn fx:id="Close" onEditStart="#tableLoad" prefWidth="78.0" text="Fermé" >-->
-<!--                             </TableColumn>-->
+                             <TableColumn fx:id="Modify" minWidth="3.0" onEditStart="#tableLoad" prefWidth="69.0" text="Moddifier" />
+                              <TableColumn fx:id="Close" onEditStart="#tableLoad" prefWidth="78.0" text="Fermé" >
+                             </TableColumn>
                           </columns>
                         </TableView>
                      </children>
