@@ -33,8 +33,8 @@ public class Competition {
         this.id_0108asap_categorycompetition = id_0108asap_categorycompetition;
         this.id_0108asap_sportsevents = id_0108asap_sportsevents;
         this.id_0108asap_typeofcompetition = id_0108asap_typeofcompetition;
-        Open = open;
-        Close = close;
+     Close=close;
+      Open=open;
         TypeOfCompetiton = typeOfCompetiton;
         IdRaceType = idRaceType;
         NumberDays = numberDays;
@@ -104,7 +104,7 @@ public class Competition {
         Location_Circuit = location_Circuit;
     }
 
-    public Competition(int id, int id_0108asap_sportsevents, String typeOfCompetiton, int idRaceType, int idTypeCompetition, String open, int numberDays, int idSportEvents, String observation, String close, String nameOfTheTest, int idraceoutsiderally, Date start, Date end, Date day1, Date day2, Date day3, int idCompetition, Date dateDebut, String categoryCompetition) {
+    public Competition(int id, String typeOfCompetiton, int idRaceType, int idTypeCompetition, String open, int numberDays, int idSportEvents, String observation, String close, String nameOfTheTest, int idraceoutsiderally, Date start, Date end, Date day1, Date day2, Date day3, int idCompetition, Date dateDebut, String categoryCompetition) {
     }
 
     public Competition(String nameOfTheTest) {
@@ -121,6 +121,7 @@ public class Competition {
     public static void setGetItems(Object getItems) {
         Competition.getItems = getItems;
     }
+
 
     public int getId() {
         return id;

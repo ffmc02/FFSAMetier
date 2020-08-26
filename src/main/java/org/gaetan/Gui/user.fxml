@@ -1,51 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.gaetan.Gui.UserControleur">
+<AnchorPane prefHeight="824.0" prefWidth="1220.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.gaetan.Gui.UserControleur">
    <children>
-      <TabPane prefHeight="393.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <TabPane layoutX="-59.0" layoutY="-1.0" prefHeight="913.0" prefWidth="1362.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="-88.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="-83.0" AnchorPane.topAnchor="-1.0">
         <tabs>
           <Tab fx:id="Index" text="Acccueil">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <Button fx:id="CompetitionList" layoutX="113.0" layoutY="24.0" mnemonicParsing="false" onAction="#ListOpenedCompetiton" text="Liste des competition" />
-                        <Button fx:id="CompetitionOpen" layoutX="113.0" layoutY="95.0" mnemonicParsing="false" onAction="#OpenCompetition" text="Ouvrire une competition" />
-                        <Button fx:id="RefistrerOfficiel" layoutX="117.0" layoutY="170.0" mnemonicParsing="false" text="Liste des officiiel inscrit" />
+                        <Button fx:id="ListOfficial" layoutX="117.0" layoutY="170.0" mnemonicParsing="false" onAction="#ListOffical" text="Liste des officiiel inscrit" />
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
-            <Tab fx:id="OpenCompetTab" disable="true" text="Ouvreture de competition">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Button fx:id="OpenOustrideRally" layoutX="112.0" layoutY="56.0" mnemonicParsing="false" text="Ouvrire une competition hors rallye " />
-                        <Button fx:id="OpenRally" layoutX="112.0" layoutY="182.0" mnemonicParsing="false" text="Ouvriire un Rally /rallye tt" />
-                     </children></AnchorPane>
-              </content>
-            </Tab>
-          <Tab fx:id="ListTabCiompet" disable="true" text="Competion ouverte">
+          <Tab fx:id="ListTabCoimpet" text="Competion ouverte">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="798.0" prefWidth="1309.0">
                      <children>
-                        <TableView fx:id="OpenCompetition" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="ListCompetition" layoutX="14.0" onMouseClicked="#SetForm" prefHeight="797.0" prefWidth="421.0" AnchorPane.bottomAnchor="87.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="900.0" AnchorPane.topAnchor="0.0">
                           <columns>
                             <TableColumn fx:id="NameOfCompetion" prefWidth="117.0" text="épreuve" />
                             <TableColumn fx:id="CompettionType" prefWidth="116.0" text="Categorie" />
                               <TableColumn fx:id="Localisation" prefWidth="73.0" text="Localisation" />
-                              <TableColumn fx:id="StartDay" prefWidth="139.0" text="début" />
-                             <TableColumn fx:id="Modify" minWidth="3.0" onEditStart="#tableLoad" prefWidth="69.0" text="Moddifier" />
-                              <TableColumn fx:id="Close" onEditStart="#tableLoad" prefWidth="78.0" text="Fermé" >
-                             </TableColumn>
+                              <TableColumn fx:id="StartDay" prefWidth="116.0" text="début" />
                           </columns>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
                         </TableView>
+                        <VBox fx:id="BoxBtnModifyClose" layoutX="453.0" layoutY="88.0" prefHeight="238.0" prefWidth="147.0">
+                           <children>
+                              <Button fx:id="BtnModify" mnemonicParsing="false" text="Modifier">
+                                 <VBox.margin>
+                                    <Insets left="25.0" right="50.0" top="25.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="BtnClose" mnemonicParsing="false" text="Fermer">
+                                 <VBox.margin>
+                                    <Insets left="25.0" right="25.0" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
                      </children>
               </AnchorPane>
             </content>
           </Tab>
+            <Tab fx:id="ListOfficials" disable="true" text="OFFICIEL inscrit ">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="760.0" prefWidth="1182.0">
+                     <children>
+                        <TableView fx:id="OfficlalList" layoutX="19.0" layoutY="1.0" prefHeight="704.0" prefWidth="1187.0">
+                          <columns>
+                            <TableColumn fx:id="NameOfTest" prefWidth="117.0" text="Nom d'épreuve" />
+                            <TableColumn fx:id="Name" minWidth="0.0" prefWidth="114.0" text="Nom de l'officiel" />
+                              <TableColumn fx:id="Firstname" prefWidth="135.0" text="Prénom de l'officiel" />
+                              <TableColumn fx:id="Function" prefWidth="78.0" text="Fonction" />
+                              <TableColumn fx:id="Pc1" minWidth="0.0" prefWidth="132.0" text="Présent Jour 1 pc" />
+                              <TableColumn fx:id="Pc2" prefWidth="118.0" text="Présent Jour2 pc" />
+                              <TableColumn fx:id="Pc3" prefWidth="116.0" text="Présent Jour3 pc" />
+                              <TableColumn fx:id="Site1" prefWidth="135.0" text="Présent site jour 1" />
+                              <TableColumn fx:id="Site2" minWidth="6.0" prefWidth="119.0" text="Présent site jour 2" />
+                              <TableColumn fx:id="Site3" minWidth="3.0" prefWidth="120.0" text="Présent site jour 3" />
+                              <TableColumn fx:id="Accommodation" minWidth="3.0" prefWidth="120.0" text="hébergement" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>
