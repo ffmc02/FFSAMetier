@@ -13,19 +13,25 @@ public class registrationforofficials {
     private String NameOfTheTest;
     private String Name;
     private String Firstname;
+    private int IdCompetition;
 
-
-
-    public registrationforofficials(String idRegistrationforofficials, String responseDatePcNeed1, String responseDatePcNeed2, String responseDatePcNeed3, String avaibleDateNeedForTheCommissioner1, String avaibleDateNeedForTheCommissioner2, String avaibleDateNeedForTheCommissioner3, String accommodation, String typeOfLicence, String nameOfTheTest, String name, String firstname) {
+    public registrationforofficials(int idRegistrationforofficials, String responseDatePcNeed1, String responseDatePcNeed2, String responseDatePcNeed3, String avaibleDateNeedForTheCommissioner1, String avaibleDateNeedForTheCommissioner2, String avaibleDateNeedForTheCommissioner3, String accommodation, String typeOfLicence, String nameOfTheTest, String name, String firstname) {
     }
 
-    public registrationforofficials(String nameOfTheTest, String name, String firstname, String typeOfLicence, String responseDatePcNeed1, String responseDatePcNeed2, String responseDatePcNeed3, String avaibleDateNeedForTheCommissioner1, String avaibleDateNeedForTheCommissioner2, String avaibleDateNeedForTheCommissioner3, String accommodation) {
+    public int getIdCompetition() {
+        return IdCompetition;
+    }
+
+    public void setIdCompetition(int idCompetition) {
+        IdCompetition = idCompetition;
+    }
+
+    public registrationforofficials() {
     }
 
     @Override
     public String toString() {
         return "registrationforofficials{" +
-                "IdRegistrationforofficials=" + IdRegistrationforofficials +
                 ", ResponseDatePcNeed1='" + ResponseDatePcNeed1 + '\'' +
                 ", ResponseDatePcNeed2='" + ResponseDatePcNeed2 + '\'' +
                 ", ResponseDatePcNeed3='" + ResponseDatePcNeed3 + '\'' +
@@ -40,8 +46,7 @@ public class registrationforofficials {
                 '}';
     }
 
-    public registrationforofficials(String idRegistrationforofficials, String responseDatePcNeed1, String responseDatePcNeed2, String responseDatePcNeed3, String avaibleDateNeedForTheCommissioner1, String avaibleDateNeedForTheCommissioner2, String avaibleDateNeedForTheCommissioner3, String accommodation, String typeOfLicence, String nameOfTheTest, String name, String firstname, String categoryCompetition) {
-    }
+
 
     public int getIdRegistrationforofficials() {
         return IdRegistrationforofficials;

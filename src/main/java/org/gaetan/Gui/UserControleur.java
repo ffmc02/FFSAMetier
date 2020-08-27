@@ -1,22 +1,23 @@
 package org.gaetan.Gui;
+import com.mysql.cj.x.protobuf.MysqlxExpect;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import org.gaetan.DAO.*;
-import org.gaetan.Gui.UserControleur;
-import org.kordamp.ikonli.fontawesome.FontAwesome;
-import org.kordamp.ikonli.javafx.FontIcon;
 
 import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;
+
+
 public class UserControleur implements Initializable{
-//    tableau des competitions
+    //    tableau des competitions
 @FXML
 TableView<Competition>ListCompetition;
+@FXML
+TableColumn<Competition, Integer>idCompet;
 @FXML
 TableColumn<Competition, String > NameOfCompetion;
     @FXML
@@ -51,17 +52,19 @@ TableColumn<Competition, String > NameOfCompetion;
     @FXML
     TableColumn<registrationforofficials, String>Accommodation;
     @FXML
-    Button CompetitionList, ListOfficial, BtnModify, BtnClose;
+    Button CompetitionList, ListOfficial, BtnDisplayOfficiels, BtnModify, BtnClose;
     @FXML
     Tab Index, OpenCompetTab, ListOfficials, ListTabCoimpet;
     @FXML
     VBox BoxBtnModifyClose;
     int idSelectifCompet = 0;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         BoxBtnModifyClose.setDisable(true);
         BtnClose.setVisible(false);
         BtnModify.setVisible(false);
+        BtnDisplayOfficiels.setVisible(false);
         ListOfficials.setDisable(true);
 //        message pour annoncé que tout c'est bien passer donc la connexion a la base de donné
         Alert alStart = new Alert(Alert.AlertType.INFORMATION);
@@ -88,13 +91,14 @@ public void testTableau (){
        OfficlalList.getItems().clear();
        OfficlalList.refresh();
        registrationforofficialsDAO  OfficilalList= new registrationforofficialsDAO();
-//       OfficlalList.getItems().addAll(OfficilalList.OfficilalList());
-//       OfficlalList.refresh();
-       for (registrationforofficials official: OfficilalList.OfficilalList()){
-           OfficlalList.getItems().add(new registrationforofficials(official.getNameOfTheTest(),official.getName(), official.getFirstname(), official.getTypeOfLicence(),official.getResponseDatePcNeed1(),
-                   official.getResponseDatePcNeed2(), official.getResponseDatePcNeed3(), official.getAvaibleDateNeedForTheCommissioner1(), official.getAvaibleDateNeedForTheCommissioner2(),
-                   official.getAvaibleDateNeedForTheCommissioner3(), official.getAccommodation()));
-       }
+
+       OfficlalList.getItems().addAll(OfficilalList.OfficilalList());
+       OfficlalList.refresh();
+//       for (registrationforofficials official: OfficilalList.OfficilalList()){
+//           OfficlalList.getItems().add(new registrationforofficials(official.getNameOfTheTest(),official.getName(), official.getFirstname(), official.getTypeOfLicence(),official.getResponseDatePcNeed1(),
+//                   official.getResponseDatePcNeed2(), official.getResponseDatePcNeed3(), official.getAvaibleDateNeedForTheCommissioner1(), official.getAvaibleDateNeedForTheCommissioner2(),
+//                   official.getAvaibleDateNeedForTheCommissioner3(), official.getAccommodation()));
+//       }
    }
 //Au clique du bouton ouvrire une compétition l'onglét est déverouiiler et l'onglet Liste des compétition se verouille
    public  void ListOffical(){
@@ -112,12 +116,14 @@ public void testTableau (){
        Site2.setCellValueFactory(new PropertyValueFactory<>("AvaibleDateNeedForTheCommissioner2"));
        Site3.setCellValueFactory(new PropertyValueFactory<>("AvaibleDateNeedForTheCommissioner3"));
        Accommodation.setCellValueFactory(new PropertyValueFactory<>("Accommodation"));
+//appel a la fonction pour télécharger le tableau des officiel
        TableLoadOfficial();
    }
 //   au clique du bouton liste compétition l'onglet liste compétiton est dévérouiller et l'onglet ouvrire une compétion est vérouiller
    public void ListOpenedCompetiton(){
        ListTabCoimpet.setDisable(false);
        ListOfficials.setDisable(true);
+       idCompet.setCellValueFactory(new PropertyValueFactory<>("id"));
        NameOfCompetion.setCellValueFactory(new PropertyValueFactory<>("NameOfTheTest"));
        CompettionType.setCellValueFactory(new PropertyValueFactory<>("CategoryCompetition"));
        Localisation.setCellValueFactory(new PropertyValueFactory<>("Location_Circuit"));
@@ -125,15 +131,41 @@ public void testTableau (){
        //appel a la fonction TableLoadCompet().
        TableLoadCompet();
    }
-public void SetForm(){
-
+    public void SetForm(){
+//fonction pour récupére l'id ne fonctionne pas
     idSelectifCompet=ListCompetition.getSelectionModel().getSelectedItem().getId();
     BoxBtnModifyClose.setDisable(false);
     BtnClose.setVisible(true);
     BtnModify.setVisible(true);
+    BtnDisplayOfficiels.setVisible(true);
     ListTabCoimpet.setDisable(false);
     ListOfficials.setDisable(true);
-
 }
-//validation des formulaire
+    public void CloseCompetition(){
+        System.out.println(idSelectifCompet);
+        CompetitionDAO CloseOrOpenCompetition =new CompetitionDAO();
+        if (idSelectifCompet!= 0){
+            Competition close=new Competition();
+            close.setId(idSelectifCompet);
+            close.setOpen("0");
+            close.setClose("1");
+          CloseOrOpenCompetition.CloseOrOpenCompet(close);
+            TableLoadCompet();
+
+        }
+    }
+public void DisplayOfficialForCompetition(){
+            registrationforofficialsDAO ListForCompet = new registrationforofficialsDAO();
+    if(idSelectifCompet!=0){
+        registrationforofficials ListOFFicial = new registrationforofficials();
+        ListOFFicial.setIdCompetition(idSelectifCompet);
+        OfficlalList.getItems().clear();
+        OfficlalList.refresh();
+        registrationforofficialsDAO  OfficilalList= new registrationforofficialsDAO();
+        OfficlalList.getItems().addAll(OfficilalList.DisplayOfficialRegisteredForCompetition(idSelectifCompet));
+        OfficlalList.refresh();
+        ListTabCoimpet.setDisable(true);
+        ListOfficials.setDisable(false);
+        }
+}
 }

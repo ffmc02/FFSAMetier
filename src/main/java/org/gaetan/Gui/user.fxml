@@ -24,6 +24,7 @@
                      <children>
                         <TableView fx:id="ListCompetition" layoutX="14.0" onMouseClicked="#SetForm" prefHeight="797.0" prefWidth="421.0" AnchorPane.bottomAnchor="87.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="900.0" AnchorPane.topAnchor="0.0">
                           <columns>
+                              <TableColumn fx:id="idCompet" prefWidth="75.0" text="id" visible="false" />
                             <TableColumn fx:id="NameOfCompetion" prefWidth="117.0" text="épreuve" />
                             <TableColumn fx:id="CompettionType" prefWidth="116.0" text="Categorie" />
                               <TableColumn fx:id="Localisation" prefWidth="73.0" text="Localisation" />
@@ -33,14 +34,19 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding>
                         </TableView>
-                        <VBox fx:id="BoxBtnModifyClose" layoutX="453.0" layoutY="88.0" prefHeight="238.0" prefWidth="147.0">
+                        <VBox fx:id="BoxBtnModifyClose" layoutX="446.0" layoutY="14.0" prefHeight="238.0" prefWidth="147.0">
                            <children>
                               <Button fx:id="BtnModify" mnemonicParsing="false" text="Modifier">
                                  <VBox.margin>
                                     <Insets left="25.0" right="50.0" top="25.0" />
                                  </VBox.margin>
                               </Button>
-                              <Button fx:id="BtnClose" mnemonicParsing="false" text="Fermer">
+                              <Button fx:id="BtnDisplayOfficiels" mnemonicParsing="false" onAction="#DisplayOfficialForCompetition" text="Afficher les Officiel ">
+                                 <VBox.margin>
+                                    <Insets bottom="50.0" left="25.0" top="75.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="BtnClose" mnemonicParsing="false" onAction="#CloseCompetition" text="Fermer">
                                  <VBox.margin>
                                     <Insets left="25.0" right="25.0" top="10.0" />
                                  </VBox.margin>

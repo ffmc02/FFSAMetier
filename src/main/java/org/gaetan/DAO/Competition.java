@@ -56,19 +56,25 @@ public class Competition {
    // }
 
 
-    public Competition(String nameOfTheTest, String categoryCompetition, String location_circuit, java.sql.Date dateDebut) {
+    public Competition(int id, String nameOfTheTest, String categoryCompetition, String location_circuit, java.sql.Date dateDebut) {
+        this.id=id;
         NameOfTheTest = nameOfTheTest;
         CategoryCompetition = categoryCompetition;
         Location_Circuit = location_circuit;
         DateDebut= dateDebut;
     }
-//Essai de methode
+
+    public Competition(String open, String close, int idSelectifCompet) {
+    }
+
+
+    //Essai de methode
     @Override
     public String toString() {
         return "Competition{" +
-                "id=" + id +
-                ", id_0108asap_categorycompetition=" + id_0108asap_categorycompetition +
-                ", id_0108asap_sportsevents=" + id_0108asap_sportsevents +
+                     "id=" + id +
+                  ", id_0108asap_categorycompetition=" + id_0108asap_categorycompetition +
+                    ", id_0108asap_sportsevents=" + id_0108asap_sportsevents +
                 ", id_0108asap_typeofcompetition=" + id_0108asap_typeofcompetition +
                 ", Open='" + Open + '\'' +
                 ", Close='" + Close + '\'' +
@@ -92,9 +98,6 @@ public class Competition {
     }
 
 
-    public Competition(String nameOfTheTest, String typeOfCompetiton, String location_circuit, Date start) {
-
-    }
 //get et set de la fonction ListCompetitionOustidRally
     public String getLocation_Circuit() {
         return Location_Circuit;
@@ -107,11 +110,11 @@ public class Competition {
     public Competition(int id, String typeOfCompetiton, int idRaceType, int idTypeCompetition, String open, int numberDays, int idSportEvents, String observation, String close, String nameOfTheTest, int idraceoutsiderally, Date start, Date end, Date day1, Date day2, Date day3, int idCompetition, Date dateDebut, String categoryCompetition) {
     }
 
-    public Competition(String nameOfTheTest) {
+    public Competition() {
     }
 
-    public Competition(String nameOfTheTest, String typeOfCompetiton) {
-    }
+//    public Competition(int id, String ofTheTest, String nameOfTheTest, String typeOfCompetiton, java.sql.Date dateDebut) {
+//    }
 
 
     public static Object getGetItems() {
@@ -124,7 +127,7 @@ public class Competition {
 
 
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(int id) {
@@ -290,4 +293,6 @@ public class Competition {
     public void setCategoryCompetition(String categoryCompetition) {
         CategoryCompetition = categoryCompetition;
     }
+
+
 }
