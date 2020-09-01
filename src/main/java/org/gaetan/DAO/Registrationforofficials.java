@@ -1,6 +1,6 @@
 package org.gaetan.DAO;
 
-public class registrationforofficials {
+public class Registrationforofficials {
     private int IdRegistrationforofficials;
     private String ResponseDatePcNeed1;
     private String ResponseDatePcNeed2;
@@ -15,8 +15,25 @@ public class registrationforofficials {
     private String Firstname;
     private int IdCompetition;
 
-    public registrationforofficials(int idRegistrationforofficials, String responseDatePcNeed1, String responseDatePcNeed2, String responseDatePcNeed3, String avaibleDateNeedForTheCommissioner1, String avaibleDateNeedForTheCommissioner2, String avaibleDateNeedForTheCommissioner3, String accommodation, String typeOfLicence, String nameOfTheTest, String name, String firstname) {
+    public Registrationforofficials(int idRegistrationforofficials, String responseDatePcNeed1, String responseDatePcNeed2, String responseDatePcNeed3, String avaibleDateNeedForTheCommissioner1, String avaibleDateNeedForTheCommissioner2, String avaibleDateNeedForTheCommissioner3, String accommodation, String typeOfLicence, String nameOfTheTest, String name, String firstname) {
+   this.IdRegistrationforofficials=idRegistrationforofficials;
+        ResponseDatePcNeed1=responseDatePcNeed1;
+        ResponseDatePcNeed2=responseDatePcNeed2;
+        ResponseDatePcNeed3=responseDatePcNeed3;
+        AvaibleDateNeedForTheCommissioner1=avaibleDateNeedForTheCommissioner1;
+        AvaibleDateNeedForTheCommissioner2=avaibleDateNeedForTheCommissioner2;
+        AvaibleDateNeedForTheCommissioner3=avaibleDateNeedForTheCommissioner3;
+        Accommodation=accommodation;
+        TypeOfLicence=typeOfLicence;
+        NameOfTheTest=nameOfTheTest;
+        Name=name;
+        Firstname=firstname;
     }
+
+    public Registrationforofficials() {
+
+    }
+
 
     public int getIdCompetition() {
         return IdCompetition;
@@ -26,27 +43,26 @@ public class registrationforofficials {
         IdCompetition = idCompetition;
     }
 
-    public registrationforofficials() {
-    }
+
 
     @Override
     public String toString() {
         return "registrationforofficials{" +
-                ", ResponseDatePcNeed1='" + ResponseDatePcNeed1 + '\'' +
-                ", ResponseDatePcNeed2='" + ResponseDatePcNeed2 + '\'' +
-                ", ResponseDatePcNeed3='" + ResponseDatePcNeed3 + '\'' +
-                ", AvaibleDateNeedForTheCommissioner1='" + AvaibleDateNeedForTheCommissioner1 + '\'' +
-                ", AvaibleDateNeedForTheCommissioner2='" + AvaibleDateNeedForTheCommissioner2 + '\'' +
-                ", AvaibleDateNeedForTheCommissioner3='" + AvaibleDateNeedForTheCommissioner3 + '\'' +
-                ", Accommodation='" + Accommodation + '\'' +
-                ", TypeOfLicence='" + TypeOfLicence + '\'' +
-                ", NameOfTheTest='" + NameOfTheTest + '\'' +
-                ", Name='" + Name + '\'' +
-                ", Firstname='" + Firstname + '\'' +
+                "IdRegistrationforofficials=" + this.getIdRegistrationforofficials() +
+                ", ResponseDatePcNeed1='" + this.getResponseDatePcNeed1() + '\'' +
+                ", ResponseDatePcNeed2='" + this.getResponseDatePcNeed2() + '\'' +
+                ", ResponseDatePcNeed3='" + this.getResponseDatePcNeed3() + '\'' +
+                ", AvaibleDateNeedForTheCommissioner1='" + this.getAvaibleDateNeedForTheCommissioner1() + '\'' +
+                ", AvaibleDateNeedForTheCommissioner2='" + this.getAvaibleDateNeedForTheCommissioner2() + '\'' +
+                ", AvaibleDateNeedForTheCommissioner3='" + this.getAvaibleDateNeedForTheCommissioner3() + '\'' +
+                ", Accommodation='" + this.getAccommodation() + '\'' +
+                ", TypeOfLicence='" + this.getTypeOfLicence() + '\'' +
+                ", NameOfTheTest='" + this.getNameOfTheTest() + '\'' +
+                ", Name='" + this.getName() + '\'' +
+                ", Firstname='" + this.getName() + '\'' +
+                ", IdCompetition=" + this.getIdCompetition() +
                 '}';
     }
-
-
 
     public int getIdRegistrationforofficials() {
         return IdRegistrationforofficials;

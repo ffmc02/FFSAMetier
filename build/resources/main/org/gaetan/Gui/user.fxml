@@ -12,13 +12,13 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="CompetitionList" layoutX="113.0" layoutY="24.0" mnemonicParsing="false" onAction="#ListOpenedCompetiton" text="Liste des competition" />
-                        <Button fx:id="ListOfficial" layoutX="117.0" layoutY="170.0" mnemonicParsing="false" onAction="#ListOffical" text="Liste des officiiel inscrit" />
+                        <Button fx:id="BtnCompetitionList" layoutX="113.0" layoutY="24.0" mnemonicParsing="false" onAction="#test" text="Liste des competition" />
+                        <Button fx:id="BtnListOfficial" layoutX="117.0" layoutY="170.0" mnemonicParsing="false" onAction="#ListOfficial" text="Liste des officiiel inscrit" />
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab fx:id="ListTabCoimpet" text="Competion ouverte">
+          <Tab fx:id="ListTabCompet" text="Competion ouverte">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="798.0" prefWidth="1309.0">
                      <children>
@@ -36,7 +36,7 @@
                         </TableView>
                         <VBox fx:id="BoxBtnModifyClose" layoutX="446.0" layoutY="14.0" prefHeight="238.0" prefWidth="147.0">
                            <children>
-                              <Button fx:id="BtnModify" mnemonicParsing="false" text="Modifier">
+                              <Button fx:id="BtnModify" mnemonicParsing="false" text="Ajouter">
                                  <VBox.margin>
                                     <Insets left="25.0" right="50.0" top="25.0" />
                                  </VBox.margin>
@@ -53,11 +53,12 @@
                               </Button>
                            </children>
                         </VBox>
+
                      </children>
               </AnchorPane>
             </content>
           </Tab>
-            <Tab fx:id="ListOfficials" disable="true" text="OFFICIEL inscrit ">
+            <Tab fx:id="ListOfficials" disable="false" text="OFFICIEL inscrit ">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="760.0" prefWidth="1182.0">
                      <children>
@@ -66,7 +67,7 @@
                             <TableColumn fx:id="NameOfTest" prefWidth="117.0" text="Nom d'épreuve" />
                             <TableColumn fx:id="Name" minWidth="0.0" prefWidth="114.0" text="Nom de l'officiel" />
                               <TableColumn fx:id="Firstname" prefWidth="135.0" text="Prénom de l'officiel" />
-                              <TableColumn fx:id="Function" prefWidth="78.0" text="Fonction" />
+                              <TableColumn fx:id="TypeOfLicence" prefWidth="78.0" text="Fonction" />
                               <TableColumn fx:id="Pc1" minWidth="0.0" prefWidth="132.0" text="Présent Jour 1 pc" />
                               <TableColumn fx:id="Pc2" prefWidth="118.0" text="Présent Jour2 pc" />
                               <TableColumn fx:id="Pc3" prefWidth="116.0" text="Présent Jour3 pc" />

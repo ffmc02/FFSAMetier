@@ -52,8 +52,8 @@ public class Competition {
 
     }
 
-   // public Competition(int id, int id_0108asap_sportsevents, String typeOfCompetiton, int idRaceType, Integer idTypeCompetition, String open, int numberDays, int idSportEvents, String observation, String observation1, String close, String nameOfTheTest, int idraceoutsiderally, java.sql.Date start, java.sql.Date end, java.sql.Date day1, java.sql.Date day2, java.sql.Date day3, int idCompetition, java.sql.Date dateDebut, String categoryCompetition) {
-   // }
+    public Competition(int id, int id_0108asap_sportsevents, String typeOfCompetiton, int idRaceType, Integer idTypeCompetition, String open, int numberDays, int idSportEvents, String observation, String observation1, String close, String nameOfTheTest, int idraceoutsiderally, java.sql.Date start, java.sql.Date end, java.sql.Date day1, java.sql.Date day2, java.sql.Date day3, int idCompetition, java.sql.Date dateDebut, String categoryCompetition) {
+    }
 
 
     public Competition(int id, String nameOfTheTest, String categoryCompetition, String location_circuit, java.sql.Date dateDebut) {

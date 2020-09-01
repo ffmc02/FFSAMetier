@@ -1,5 +1,5 @@
 package org.gaetan.DAO;
-
+import javafx.scene.control.TextField;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,7 +12,7 @@ public class CompetitionDAO extends connexion {
     }
     //methode de lecture des competitions ouverte
     public List<Competition> ListCompetitionOustidRally(){
-        List<Competition> ListCompetitionOustidRally= new ArrayList();
+        List<Competition> ListCompetitionOustidRally= new ArrayList<Competition>();
 //        appel a la fonction de connexion
         this.createConnection();
         try{
@@ -35,7 +35,11 @@ public class CompetitionDAO extends connexion {
                     "");
             // je n'arrive pas a récuperer l'id pour ensuite faire le update
             while (res.next()){
-                Competition c =new Competition ( res.getInt("id"), res.getString("NameOfTheTest"), res.getString("CategoryCompetition"), res.getString("Location_Circuit"), res.getDate("DateDebut"));
+                Competition c =new Competition ( res.getInt("id"),
+                        res.getString("NameOfTheTest"),
+                        res.getString("CategoryCompetition"),
+                        res.getString("Location_Circuit"),
+                        res.getDate("DateDebut"));
                 ListCompetitionOustidRally.add(c);
 //                System.out.println((res.getInt("id")));
                 //teste de la bonne execution de la méthode

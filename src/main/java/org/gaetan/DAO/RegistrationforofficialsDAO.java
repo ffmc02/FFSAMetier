@@ -6,11 +6,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-public class registrationforofficialsDAO extends connexion{
+public class RegistrationforofficialsDAO extends connexion{
 //    methode pour liste des officiels inscrit
 
-    public List<registrationforofficials> OfficilalList() {
-        List<registrationforofficials> OfficilalList = new ArrayList<registrationforofficials>();
+    public List<Registrationforofficials> OfficilalList() {
+        List<Registrationforofficials> OfficilalList = new ArrayList<Registrationforofficials>();
 //        appel a la fonction de connexion
         this.createConnection();
         try{
@@ -45,7 +45,7 @@ public class registrationforofficialsDAO extends connexion{
                     "ON `0108asap_rally`.`id_0108asap_competiton`= `0108asap_competiton`.`id`" +
                     "");
             while (res.next()) {
-                registrationforofficials L = new registrationforofficials(
+                Registrationforofficials L = new Registrationforofficials(
                         res.getInt("IdRegistrationforofficials"),
                         res.getString("ResponseDatePcNeed1"),
                         res.getString("ResponseDatePcNeed2"),
@@ -60,10 +60,11 @@ public class registrationforofficialsDAO extends connexion{
                         res.getString("Firstname")
                         );
                 OfficilalList.add(L);
-                System.out.println( res.getString("NameOfTheTest"));
+                System.out.println(res.getString("TypeOfLicence"));
 // PBM d 'affichage rien ne s'affiche dans mon tableau
 //                message de susccé
                 System.out.println("ça marche Liste officiel ");
+                System.out.println(L.getFirstname());
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -71,8 +72,10 @@ public class registrationforofficialsDAO extends connexion{
         this.closeConnection();
         return OfficilalList;
     }
-public  List<registrationforofficials> DisplayOfficialRegisteredForCompetition(int IdCompetition){
-    List<registrationforofficials> DisplayOfficialRegisteredForCompetition = new ArrayList<registrationforofficials>();
+//    methode d'affichage de la liste des officiels pour tels compétitions
+
+public  List<Registrationforofficials> DisplayOfficialRegisteredForCompetition(int IdCompetition){
+    List<Registrationforofficials> DisplayOfficialRegisteredForCompetition = new ArrayList<Registrationforofficials>();
 //        appel a la fonction de connexion
     this.createConnection();
     try{
@@ -106,12 +109,15 @@ public  List<registrationforofficials> DisplayOfficialRegisteredForCompetition(i
                 "ON `0108asap_typeofcompetition`.`id`=`0108asap_competiton`.`id_0108asap_typeofcompetition` " +
                 "INNER JOIN `0108asap_rally` " +
                 "ON `0108asap_rally`.`id_0108asap_competiton`= `0108asap_competiton`.`id`" +
-                "WHERE `0108asap_competiton`.`id`=?");
+                "" +
+                "WHERE `0108asap_competiton`.`id`=?" +
+                "");
         pstm.setInt(1, IdCompetition);
         ResultSet res= pstm.executeQuery();
+
         while (res.next()) {
 
-            registrationforofficials O = new registrationforofficials(
+            Registrationforofficials OFficiaList = new Registrationforofficials(
 
                     res.getInt("IdRegistrationforofficials"),
                     res.getString("ResponseDatePcNeed1"),
@@ -127,8 +133,12 @@ public  List<registrationforofficials> DisplayOfficialRegisteredForCompetition(i
                     res.getString("Firstname")
 
             );
-            DisplayOfficialRegisteredForCompetition.add(O);
+
+            DisplayOfficialRegisteredForCompetition.add(OFficiaList);
             System.out.println( res.getString("NameOfTheTest"));
+            System.out.println(res.getString("Accommodation"));
+//            test d'ffichage du nom des officiels
+            System.out.println(  res.getString("Name"));
 // PBM d 'affichage rien ne s'affiche dans mon tableau
 //                message de susccé
             System.out.println("ça marche Liste officiel pour tel commpétition ");

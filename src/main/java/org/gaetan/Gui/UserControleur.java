@@ -1,11 +1,13 @@
 package org.gaetan.Gui;
-import com.mysql.cj.x.protobuf.MysqlxExpect;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
-import org.gaetan.DAO.*;
+import org.gaetan.DAO.Registrationforofficials;
+import org.gaetan.DAO.RegistrationforofficialsDAO;
+import org.gaetan.DAO.Competition;
+import org.gaetan.DAO.CompetitionDAO;
 
 import java.net.URL;
 import java.util.Date;
@@ -28,33 +30,33 @@ TableColumn<Competition, String > NameOfCompetion;
     TableColumn<Competition, Date> StartDay;
 //  tableau de la liste des officiels
     @FXML
-    TableView<registrationforofficials>OfficlalList;
+    TableView<Registrationforofficials>OfficlalList;
     @FXML
-    TableColumn<registrationforofficials, String>NameOfTest;
+    TableColumn<Registrationforofficials, String>NameOfTest;
     @FXML
-    TableColumn<registrationforofficials, String>Name;
+    TableColumn<Registrationforofficials, String>Name;
     @FXML
-    TableColumn<registrationforofficials, String>Firstname;
+    TableColumn<Registrationforofficials, String>Firstname;
     @FXML
-    TableColumn<registrationforofficials, String>Function;
+    TableColumn<Registrationforofficials, String>TypeOfLicence;
     @FXML
-    TableColumn<registrationforofficials, String>Pc1;
+    TableColumn<Registrationforofficials, String>Pc1;
     @FXML
-    TableColumn<registrationforofficials, String>Pc2;
+    TableColumn<Registrationforofficials, String>Pc2;
     @FXML
-    TableColumn<registrationforofficials, String>Pc3;
+    TableColumn<Registrationforofficials, String>Pc3;
     @FXML
-    TableColumn<registrationforofficials, String>Site1;
+    TableColumn<Registrationforofficials, String>Site1;
     @FXML
-    TableColumn<registrationforofficials, String>Site2;
+    TableColumn<Registrationforofficials, String>Site2;
     @FXML
-    TableColumn<registrationforofficials, String>Site3;
+    TableColumn<Registrationforofficials, String>Site3;
     @FXML
-    TableColumn<registrationforofficials, String>Accommodation;
+    TableColumn<Registrationforofficials, String>Accommodation;
     @FXML
-    Button CompetitionList, ListOfficial, BtnDisplayOfficiels, BtnModify, BtnClose;
+    Button BtnCompetitionList, BtnListOfficial, BtnDisplayOfficiels, BtnModify, BtnClose;
     @FXML
-    Tab Index, OpenCompetTab, ListOfficials, ListTabCoimpet;
+    Tab Index, ListOfficials, ListTabCompet;
     @FXML
     VBox BoxBtnModifyClose;
     int idSelectifCompet = 0;
@@ -65,50 +67,44 @@ TableColumn<Competition, String > NameOfCompetion;
         BtnClose.setVisible(false);
         BtnModify.setVisible(false);
         BtnDisplayOfficiels.setVisible(false);
-        ListOfficials.setDisable(true);
+        ListOfficials.setDisable(false);
 //        message pour annoncé que tout c'est bien passer donc la connexion a la base de donné
         Alert alStart = new Alert(Alert.AlertType.INFORMATION);
         alStart.setTitle("DOnnée a jours ");
         alStart.setContentText("Bienvenue sur votre service de gestions  des compétitions,  votre tableau est à jours.");
         alStart.showAndWait();
-    }
-    //fonction de teste
-public void testTableau (){
-    System.out.println("Test " );
 
+    }
+//essay liste
+public void test(){
+    System.out.println("test()");
+    ListOpenedCompetition();
 }
 //Afficage du tableau
    public void TableLoadCompet() {
+       System.out.println("TableLoadCompet()");
        ListCompetition.getItems().clear();
        ListCompetition.refresh();
         CompetitionDAO ListCompetitionOutsideRally= new CompetitionDAO();
        ListCompetition.getItems().addAll(ListCompetitionOutsideRally.ListCompetitionOustidRally());
        ListCompetition.refresh();
-//        }
    }
 //   tableau des officiels inscrit au épreuve
    public void TableLoadOfficial(){
        OfficlalList.getItems().clear();
        OfficlalList.refresh();
-       registrationforofficialsDAO  OfficilalList= new registrationforofficialsDAO();
-
+       RegistrationforofficialsDAO OfficilalList = new RegistrationforofficialsDAO();
        OfficlalList.getItems().addAll(OfficilalList.OfficilalList());
        OfficlalList.refresh();
-//       for (registrationforofficials official: OfficilalList.OfficilalList()){
-//           OfficlalList.getItems().add(new registrationforofficials(official.getNameOfTheTest(),official.getName(), official.getFirstname(), official.getTypeOfLicence(),official.getResponseDatePcNeed1(),
-//                   official.getResponseDatePcNeed2(), official.getResponseDatePcNeed3(), official.getAvaibleDateNeedForTheCommissioner1(), official.getAvaibleDateNeedForTheCommissioner2(),
-//                   official.getAvaibleDateNeedForTheCommissioner3(), official.getAccommodation()));
-//       }
    }
 //Au clique du bouton ouvrire une compétition l'onglét est déverouiiler et l'onglet Liste des compétition se verouille
-   public  void ListOffical(){
-
-       ListTabCoimpet.setDisable(true);
+   public  void ListOfficial(){
+       ListTabCompet.setDisable(true);
        ListOfficials.setDisable(false);
        NameOfTest.setCellValueFactory(new PropertyValueFactory<>("NameOfTheTest"));
        Name.setCellValueFactory(new PropertyValueFactory<>("Name"));
        Firstname.setCellValueFactory(new PropertyValueFactory<>("Firstname"));
-       Function.setCellValueFactory(new PropertyValueFactory<>("TypeOfLicence"));
+       TypeOfLicence.setCellValueFactory(new PropertyValueFactory<>("TypeOfLicence"));
        Pc1.setCellValueFactory(new PropertyValueFactory<>("ResponseDatePcNeed1"));
        Pc2.setCellValueFactory(new PropertyValueFactory<>("ResponseDatePcNeed2"));
        Pc3.setCellValueFactory(new PropertyValueFactory<>("ResponseDatePcNeed3"));
@@ -116,12 +112,14 @@ public void testTableau (){
        Site2.setCellValueFactory(new PropertyValueFactory<>("AvaibleDateNeedForTheCommissioner2"));
        Site3.setCellValueFactory(new PropertyValueFactory<>("AvaibleDateNeedForTheCommissioner3"));
        Accommodation.setCellValueFactory(new PropertyValueFactory<>("Accommodation"));
-//appel a la fonction pour télécharger le tableau des officiel
+
+//appel a la fonction pour télécharger le tableau des officiels complet
        TableLoadOfficial();
    }
 //   au clique du bouton liste compétition l'onglet liste compétiton est dévérouiller et l'onglet ouvrire une compétion est vérouiller
-   public void ListOpenedCompetiton(){
-       ListTabCoimpet.setDisable(false);
+   public void ListOpenedCompetition(){
+       System.out.println("ListOpenedCompetition()");
+      ListTabCompet.setDisable(false);
        ListOfficials.setDisable(true);
        idCompet.setCellValueFactory(new PropertyValueFactory<>("id"));
        NameOfCompetion.setCellValueFactory(new PropertyValueFactory<>("NameOfTheTest"));
@@ -130,42 +128,75 @@ public void testTableau (){
        StartDay.setCellValueFactory(new PropertyValueFactory<>("DateDebut"));
        //appel a la fonction TableLoadCompet().
        TableLoadCompet();
+
    }
     public void SetForm(){
-//fonction pour récupére l'id ne fonctionne pas
-    idSelectifCompet=ListCompetition.getSelectionModel().getSelectedItem().getId();
-    BoxBtnModifyClose.setDisable(false);
-    BtnClose.setVisible(true);
-    BtnModify.setVisible(true);
-    BtnDisplayOfficiels.setVisible(true);
-    ListTabCoimpet.setDisable(false);
-    ListOfficials.setDisable(true);
+//fonction pour récupére l'id
+
+        System.out.println("SetForm()");
+ idSelectifCompet=ListCompetition.getSelectionModel().getSelectedItem().getId();
+        BoxBtnModifyClose.setDisable(false);
+        BtnClose.setVisible(true);
+        BtnModify.setVisible(true);
+   BtnDisplayOfficiels.setVisible(true);
+    ListTabCompet.setDisable(false);
+   ListOfficials.setDisable(true);
 }
+//fonction pour fermé une compétion
     public void CloseCompetition(){
-        System.out.println(idSelectifCompet);
         CompetitionDAO CloseOrOpenCompetition =new CompetitionDAO();
+//        SI idSelectifcompet n'est pas vide
         if (idSelectifCompet!= 0){
+//            je créer un nouvelle objet de competition que j'incrément de la variable close
             Competition close=new Competition();
+//            l'id a modifier
             close.setId(idSelectifCompet);
+//            la nouvelle valeur de open et close
             close.setOpen("0");
             close.setClose("1");
+//          j'envoie vers la bas de donnée
           CloseOrOpenCompetition.CloseOrOpenCompet(close);
+//          je retélécharge le tableau pour mettre a jour l'affichage
             TableLoadCompet();
-
+//          J'affiche un message de succée
+            Alert alStart = new Alert(Alert.AlertType.INFORMATION);
+            alStart.setTitle("Compétition fermée");
+            alStart.setContentText("La compétition a bien étais fermée.");
+            alStart.showAndWait();
         }
     }
+    public void OfficialForCompetition(){
+        ListTabCompet.setDisable(true);
+        ListOfficials.setDisable(false);
+        NameOfTest.setCellValueFactory(new PropertyValueFactory<>("NameOfTheTest"));
+        Name.setCellValueFactory(new PropertyValueFactory<>("Name"));
+        Firstname.setCellValueFactory(new PropertyValueFactory<>("Firstname"));
+        TypeOfLicence.setCellValueFactory(new PropertyValueFactory<>("TypeOfLicence"));
+        Pc1.setCellValueFactory(new PropertyValueFactory<>("ResponseDatePcNeed1"));
+        Pc2.setCellValueFactory(new PropertyValueFactory<>("ResponseDatePcNeed2"));
+        Pc3.setCellValueFactory(new PropertyValueFactory<>("ResponseDatePcNeed3"));
+        Site1.setCellValueFactory(new PropertyValueFactory<>("AvaibleDateNeedForTheCommissioner1"));
+        Site2.setCellValueFactory(new PropertyValueFactory<>("AvaibleDateNeedForTheCommissioner2"));
+        Site3.setCellValueFactory(new PropertyValueFactory<>("AvaibleDateNeedForTheCommissioner3"));
+        Accommodation.setCellValueFactory(new PropertyValueFactory<>("Accommodation"));
+    }
+//    affichage de la liste des officiels inscrit la compétition seclectionnée dans la liste des compétition
 public void DisplayOfficialForCompetition(){
-            registrationforofficialsDAO ListForCompet = new registrationforofficialsDAO();
     if(idSelectifCompet!=0){
-        registrationforofficials ListOFFicial = new registrationforofficials();
-        ListOFFicial.setIdCompetition(idSelectifCompet);
+        Registrationforofficials ListForCompet = new Registrationforofficials();
+        ListForCompet.setIdCompetition(idSelectifCompet);
         OfficlalList.getItems().clear();
         OfficlalList.refresh();
-        registrationforofficialsDAO  OfficilalList= new registrationforofficialsDAO();
+        RegistrationforofficialsDAO  OfficilalList= new RegistrationforofficialsDAO();
         OfficlalList.getItems().addAll(OfficilalList.DisplayOfficialRegisteredForCompetition(idSelectifCompet));
         OfficlalList.refresh();
-        ListTabCoimpet.setDisable(true);
         ListOfficials.setDisable(false);
-        }
-}
+        OfficialForCompetition();
+        }else {
+        Alert alStart = new Alert(Alert.AlertType.WARNING);
+        alStart.setTitle("Aucun officiels ");
+        alStart.setContentText("Aucun officiel est inscrit pour le moment ");
+        alStart.showAndWait();
+    }
+    }
 }
