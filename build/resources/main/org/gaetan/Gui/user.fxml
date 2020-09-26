@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -13,6 +14,7 @@
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <Button fx:id="BtnCompetitionList" layoutX="113.0" layoutY="24.0" mnemonicParsing="false" onAction="#test" text="Liste des competition" />
+                        <Button fx:id="BtnListTypeCompetition" mnemonicParsing="false" onAction="#DisplayTypeCompetiton" text="gestion des types de competition" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="250.0" />
                         <Button fx:id="BtnListOfficial" layoutX="117.0" layoutY="170.0" mnemonicParsing="false" onAction="#ListOfficial" text="Liste des officiiel inscrit" />
                      </children>
                   </AnchorPane>
@@ -22,7 +24,8 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="798.0" prefWidth="1309.0">
                      <children>
-                        <TableView fx:id="ListCompetition" layoutX="14.0" onMouseClicked="#SetForm" prefHeight="797.0" prefWidth="421.0" AnchorPane.bottomAnchor="87.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="900.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="ListCompetition" layoutX="14.0" onMouseClicked="#SetForm" prefHeight="797.0" prefWidth="421.0" AnchorPane.bottomAnchor="87.0"
+                                   AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="900.0" AnchorPane.topAnchor="0.0">
                           <columns>
                               <TableColumn fx:id="idCompet" prefWidth="75.0" text="id" visible="false" />
                             <TableColumn fx:id="NameOfCompetion" prefWidth="117.0" text="épreuve" />
@@ -36,11 +39,6 @@
                         </TableView>
                         <VBox fx:id="BoxBtnModifyClose" layoutX="446.0" layoutY="14.0" prefHeight="238.0" prefWidth="147.0">
                            <children>
-                              <Button fx:id="BtnModify" mnemonicParsing="false" text="Ajouter">
-                                 <VBox.margin>
-                                    <Insets left="25.0" right="50.0" top="25.0" />
-                                 </VBox.margin>
-                              </Button>
                               <Button fx:id="BtnDisplayOfficiels" mnemonicParsing="false" onAction="#DisplayOfficialForCompetition" text="Afficher les Officiel ">
                                  <VBox.margin>
                                     <Insets bottom="50.0" left="25.0" top="75.0" />
@@ -79,6 +77,77 @@
                         </TableView>
                      </children></AnchorPane>
               </content>
+            </Tab>
+            <Tab fx:id="TypeTabCompet" text="gestion des types de compétition">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="TableListeOfTypeOfCompetition" onMouseClicked="#SetformTypeOfCompetition" prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="10.0">
+                          <columns>
+                            <TableColumn fx:id="IdTypeCimpetition" prefWidth="75.0" text="id" visible="false" />
+                            <TableColumn fx:id="TypeOfCompetition" prefWidth="199.0" text="Type de competition" />
+                          </columns>
+                        </TableView>
+                        <VBox fx:id="BoxBtnAddType" layoutX="233.0" layoutY="14.0" prefHeight="26.0" prefWidth="206.0">
+                           <children>
+                              <Button fx:id="AddTypeOFCompetitions" mnemonicParsing="false" onAction="#displayFormAddTypeCompetition" text=" Ajouter un typoe de competition" textFill="#21bbf8" />
+                           </children></VBox>
+                        <VBox fx:id="BoxBtnUpdateAndDelete" layoutX="240.0" layoutY="62.0" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Button fx:id="BtnModifyTypeOfCompetition" mnemonicParsing="false" onAction="#FormModifyTypeOfCompetition" text="Modifier" textFill="#f5760e">
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="BtnDeleteTypeOfCompetition" mnemonicParsing="false" onAction="#DeleteTypeOfCompetition" text="Suprimer" textFill="#d31212">
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children></VBox>
+                        <VBox fx:id="BoxFormAddTypeOfCompetition" layoutX="464.0" layoutY="14.0" prefHeight="116.0" prefWidth="351.0">
+                           <children>
+                              <Label fx:id="NameForm" text="test ">
+                                 <VBox.margin>
+                                    <Insets left="175.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="AddTypeOfCompetition" text="Nouveau type de competition">
+                                 <VBox.margin>
+                                    <Insets left="100.0" top="25.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="NewTypeOfCompetition" />
+                              <Button fx:id="BtnAddTypeOfCompetition" mnemonicParsing="false" onAction="#AddNewTypeOfCompetition" text="Ajouter">
+                                 <VBox.margin>
+                                    <Insets left="150.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children></VBox>
+                        <VBox fx:id="BoxModifyTypeOfCompetition" layoutX="469.0" layoutY="151.0" prefHeight="200.0" prefWidth="397.0">
+                           <children>
+                              <Label text="Modifier le noms" textFill="#da7516">
+                                 <VBox.margin>
+                                    <Insets left="150.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="ModifyTypeOfCompetition">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Button fx:id="BtnFormModifyTypeOfCompetition" mnemonicParsing="false" onAction="#ModifyTypeOfCompetition" text="Modifier">
+                                 <VBox.margin>
+                                    <Insets left="150.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children></VBox>
+                     </children>
+                    </AnchorPane>
+                </content>
             </Tab>
         </tabs>
       </TabPane>
